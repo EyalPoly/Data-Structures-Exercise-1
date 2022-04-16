@@ -1,14 +1,14 @@
 #include "City.h"
 
-void City::insertAfter(City* newCity) {
-	newCity->next = next;
-	next = newCity;
+void City::insertAfterDynamicList(City* newCity) {
+	newCity->nextPointer = nextPointer;
+	nextPointer = newCity;
 }
 
-void City::deleteAfter() {
-	City* toDelete = next;
+void City::deleteAfterDynamicList() {
+	City* toDelete = nextPointer;
 	if (toDelete != nullptr) {
-		next = toDelete->next;
+		nextPointer = toDelete->nextPointer;
 		delete toDelete;
 	}
 }

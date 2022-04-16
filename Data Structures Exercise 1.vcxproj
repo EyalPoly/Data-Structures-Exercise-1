@@ -139,11 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AccessibleList.h" />
     <ClInclude Include="City.h" />
+    <ClInclude Include="ColorCities.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AccessibleList.cpp" />
     <ClCompile Include="City.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="State.cpp" />
   </ItemGroup>

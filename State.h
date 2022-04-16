@@ -2,6 +2,7 @@
 
 #include "City.h"
 #include <iostream>
+#include <vector>
 
 class State {
 public:
@@ -16,6 +17,8 @@ public:
 		void makeEmpty() { head = tail = nullptr; }
 		// Check is the highway list is empty
 		bool isEmpty() { return head == nullptr; }
+		// Return the head of the list
+		City* getHead() { return head; }
 		// Create new city and insert it to the end of the list
 		void insertToTail(int cityNumber);
 		// Delete the HighWay list
@@ -27,17 +30,17 @@ private:
 	int roadsNumber;
 	HighWay* roadSystem;
 public:
-	// Return the number of cities
-	int getCitiesNumber() { return citiesNumber; };
-	// Set the cities number
-	void setCitiesNumber() { std::cin >> citiesNumber; }
-	// Set the roads number
-	void setRoadsNumber() { std::cin >> roadsNumber; }
+	// Ctor
+	State(std::vector<int> citiesAndRoadsNumber): citiesNumber(citiesAndRoadsNumber[0]), roadsNumber(citiesAndRoadsNumber[1]) {}
+	// Return the roadSystem array
+	HighWay* getRoadSystem() const { return roadSystem; }
+	// Initialize the highway lists, inserting the heads
+	void initializeHighWays();
 	// Create the RoadSystem array of HighWays
-	void createRoadSystem();
+	void createRoadSystem(std::vector<int> const roads);
 	// Delete the roadSystem array
 	void deleteState();
 	// Print the state structure for testing
-	void print();
+	void print() const;
 };
 
