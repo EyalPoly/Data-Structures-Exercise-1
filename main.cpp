@@ -14,11 +14,14 @@ int main(int argc, char* argv[]) {
 	if (getInput(citiesAndRoadsNumber, roads, focalCity)) {
 		State state(citiesAndRoadsNumber);
 		state.createRoadSystem(roads);
-		AccessibleList accessList(citiesAndRoadsNumber[0]);
-		ColorCities colorCities(citiesAndRoadsNumber[0]);
-		getToTownRec(state.getRoadSystem(), focalCity, colorCities, accessList);
-		accessList.print(focalCity, isRec = true);
-		//accessList.print(isRec = false);
+		AccessibleList accessListRec(citiesAndRoadsNumber[0]);
+		AccessibleList accessListItr(citiesAndRoadsNumber[0]);
+		ColorCities colorCitiesRec(citiesAndRoadsNumber[0]);
+		ColorCities colorCitiesItr(citiesAndRoadsNumber[0]);
+		getToTownRec(state.getRoadSystem(), focalCity, colorCitiesRec, accessListRec);
+		getToTownIterative(state.getRoadSystem(), focalCity, colorCitiesItr, accessListItr);
+		accessListRec.print(focalCity, isRec = true);
+		accessListItr.print(focalCity, isRec = false);
 		state.deleteState();
 	}
 }
