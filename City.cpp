@@ -12,3 +12,4 @@ void City::deleteAfterDynamicList() {
 		delete toDelete;
 	}
 }
+
